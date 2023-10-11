@@ -1,0 +1,251 @@
+:root {
+
+
+    --dark-color: #141414;
+    --dark-purple: #230046;
+    --rich-purple: #320064;
+    --slate-gray:#6C7F93;
+    --accent:#A1CCA5;
+    --skills-color:#00dbd6;
+    --exp-color:#FFAA00;
+    --education-color:#33B733;
+    --default-text:white;
+    --transparent:transparent;
+    --bg-gradient:linear-gradient(to bottom, var(--dark-purple), var(--dark-color));
+
+    --default-border-radius:20px;
+
+    --global-font:Verdana;
+
+    /* --header-img-uri:url("Images/HeaderBackground.png");*/
+    --ac-logo-url:url("https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/326536886_1624474464633116_4691692319054094993_n.png?_nc_cat=110&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=iwVr-RqvSvsAX_V8zrr&_nc_ht=scontent-ord5-1.xx&oh=00_AfDQNKRXGanohD0fiFP0N8zNO1x4pPbLURBiu6icMghTjQ&oe=651CCCE8");
+}
+
+/**
+this is the entire page
+ */
+body {
+    overflow:hidden;
+
+    background:var(--bg-gradient);
+    font-family: var(--global-font);
+    -webkit-text-fill-color: var(--default-text);
+
+    display: flex;
+    flex-direction: column;
+
+    width:100%;
+    height: 99vh;
+
+    align-items: center;
+}
+/**
+    container and header-container are the top of the page
+
+    container is the div that spans the width of the screen and shows the image background
+ */
+.container
+{
+    width: 95%;
+    /*background-image: var(--header-img-uri);*/
+
+    background-size: 75% 250%;
+    background-position: 5% 50%;
+
+    border-radius: var(--default-border-radius);
+    box-shadow: 0 0 0.2em white;
+    margin: 10px auto;
+
+}
+
+/**
+    header-container holds my name and the details (occupation, phone, email)
+ */
+#header-container
+{
+    height:auto;
+    width:auto;
+
+
+    display: flex;
+    flex-direction: column;
+
+    justify-items:center;
+    justify-content: space-around;
+
+    align-content: space-evenly;
+    align-items:center;
+
+}
+/**
+nav-bar and nav-item are the three buttons that control what content displays
+ */
+.nav-bar
+{
+
+    display: flex;
+
+    font-style: oblique;
+    font-size: large;
+
+    width: 100%;
+
+    align-items: center;
+    align-content: center;
+
+    justify-content: center;
+    justify-items: center;
+
+}
+
+.nav-item
+{
+    box-shadow: none;
+    display: block;
+
+    margin-left: 30px;
+    margin-bottom:5px;
+
+    float:left;
+
+    width: fit-content;
+
+}
+.nav-item:hover
+{
+    cursor: pointer;
+    box-shadow: 0 .1em white;
+}
+
+.other-page-nav
+{
+    position:fixed;
+
+}
+
+
+/**
+    column-container, and column are the main content
+ */
+.column-container
+{
+    background: var(--transparent);
+    display:flex;
+
+    width:80%;
+    height:fit-content;
+
+
+    align-items: start;
+    justify-content: center;
+
+}
+
+.column
+{
+    margin-top:4%;
+    padding:1em;
+
+    font-size:1.2em;
+    line-height: 2.5em;
+    border-radius:var(--default-border-radius);
+    box-shadow: 0 0 0.3em white;
+    transition:box-shadow ease 0.6s;
+
+    display:flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+
+
+}
+
+#popup-container
+{
+    -webkit-text-fill-color: black;
+    max-width: 200px;
+    display: block;
+    padding: 20px;
+
+    position: fixed;
+    bottom:1.2em;
+    left:0;
+
+}
+
+input[type=text]
+{
+    width: 96%;
+    margin-bottom:4px;
+}
+
+.form-button
+{
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 4px;
+}
+
+footer
+{
+    width: 100%;
+    height: 1.2em;
+    background:var(--accent);
+    -webkit-text-fill-color: var(--dark-color);
+
+    position: fixed;
+    bottom: 5px;
+    left: 0px;
+    right: 0px;
+}
+.footer-link:hover
+{
+    cursor:pointer;
+}
+
+#night-sky
+{
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.header-icon
+{
+    font-size:3em;
+    position: fixed;
+    cursor: pointer;
+    margin-left: 10px;
+    width: fit-content;
+
+    transform: rotate(0deg);
+    transition-duration: 0.5s;
+}
+.rotate
+{
+    transform: rotate(90deg);
+}
+
+#many-page-container
+{
+    position: fixed;
+    display: inline;
+
+    border-radius: var(--default-border-radius);
+
+}
+
+.icon-clicked
+{
+    background-color: var(--dark-color);
+}
+
+.other-page-nav
+{
+    position: relative;
+    margin-top: 50pt;
+}
