@@ -24,7 +24,7 @@ function onLoad()
     {
         let cell = tCells[i];
         cell.innerText = null;//resetting the cell for the next game
-        cell.classList = null;
+        cell.classList = null ;
         cell.classList.add(CLICKABLE_CLASS);
         cell.setAttribute(ACTIVE_ATTRIBUTE, ACTIVE.ACTIVE);
 
@@ -40,7 +40,7 @@ function onLoad()
         }
     }
 
-    tCells[12].id = "playerTopTotal";
+    tCells[12].id = "playerTopTotal"; // setting some pre-determined cells for later
     tCells[14].id = "playerTopBonus";
     tCells[30].id = "playerBottomTotal";
     tCells[32].id = "playerBottomBonus";
@@ -78,9 +78,13 @@ function sumColumn(start, end)
     let ret = 0;
     for(let i = start; i <= end; i+=2 ) //player top scores
     {
-        if(tCells[i].innerText != null)
+        if(tCells[i].innerText != null && tCells[i].getAttribute(ACTIVE_ATTRIBUTE) === ACTIVE.NOT_ACTIVE)
             ret += parseInt(tCells[i].innerText);
     }
+
+    if(!(ret >= 0)) //stops the page from displaying NaN for null values
+        ret = 0;
+
 
     return ret;
 }
@@ -148,6 +152,25 @@ function updateCells()
         if(cell.getAttribute(ACTIVE_ATTRIBUTE) === ACTIVE.ACTIVE) // not working... should stop from overwriting the current value
             cell.innerText = (tallies[i] * (i+1)).toString();
     }
+
+
+
+    /*
+    * need to check for 3 of a kind, 4 of a kind,
+    * full house, small straight, large straight and yahtzee
+    */
+
+    // **note to self**
+    // Many of these cases are superseded.
+    // (e.g. yahtzee implies four of a kind and three of a kind
+    //   and full house implies three of a kind)
+
+    let hasFourOfKind = false, hasThreeOfKind = false, hasFullHouse = false;
+    let hasYahtzee = false;
+
+    if(tallies.includes(3) && tallies.includes(2)) hasFullHouse = true;
+
+    if(tallies.includes(5)) hasYahtzee = true;
 
 
 }
