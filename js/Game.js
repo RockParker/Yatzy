@@ -121,7 +121,7 @@ function calculateTotals()
 
 function rollDice()
 {
-    for(let i = 0; i < 6; i++)
+    for(let i = 0; i < 5; i++)
     {
         dieResults[i] = Math.floor(Math.random() * 6) + 1;
     }
@@ -136,7 +136,7 @@ function updateCells()
     {
         for(let j = 0; j <= 5; j++)//value in dieResults
         {
-            if(dieResults[j] == i)
+            if(dieResults[j] === i)
                 tallies[i-1] += 1;
         }
     }
@@ -145,7 +145,7 @@ function updateCells()
     for(let i = 0; i < 6; i++)
     {
         let cell = tCells[(i*2)]
-        if(cell.getAttribute(ACTIVE_ATTRIBUTE) === ACTIVE.ACTIVE) // not working.. should stop from overwriting the current value
+        if(cell.getAttribute(ACTIVE_ATTRIBUTE) === ACTIVE.ACTIVE) // not working... should stop from overwriting the current value
             cell.innerText = (tallies[i] * (i+1)).toString();
     }
 
