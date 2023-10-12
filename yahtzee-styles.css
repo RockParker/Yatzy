@@ -2,3 +2,29 @@
 {
     display: none;
 }
+
+body
+{
+    display: flex;
+    flex-direction: column;
+
+    justify-items: start;
+}
+
+table, tbody, th, td
+{
+    border: white 1px solid;
+    padding: 0.3em;
+    text-align: end;
+    min-width: 3em;
+}
+
+.player-clickable
+{
+    cursor:pointer;
+}
+
+.player-selected
+{
+    background:greenyellow;
+}

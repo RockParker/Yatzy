@@ -8,16 +8,48 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="yahtzee-styles.css"/>
 
-    <script src="main.js"></script>
-    <script src="header.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/Game.js"></script>
 
 </head>
 
 <body>
     <div class="container" id="top-container"></div>
+
+    <button onclick="onLoad()" style="-webkit-text-fill-color: black">&#128472;</button>
+    <button onclick="rollDice()" style="-webkit-text-fill-color: black">roll dice</button>
+    <table id="game-table">
+        <tbody>
+            <tr><th></th> <th>You</th> <th>Foe</th></tr>
+            <!--Top Half-->
+            <tr> <th>Ones</th> <td></td> <td></td> </tr>
+            <tr> <th>Twos</th> <td></td> <td></td> </tr>
+            <tr> <th>Threes</th> <td></td> <td></td> </tr>
+            <tr> <th>Fours</th> <td></td> <td></td> </tr>
+            <tr> <th>Fives</th> <td></td> <td></td> </tr>
+            <tr> <th>Sixes</th> <td></td> <td></td> </tr>
+            <tr> <th>Total</th> <td></td> <td></td> </tr>
+            <tr> <th>Bonus</th> <td></td> <td></td> </tr>
+
+            <!--Bottom half-->
+            <tr> <th>3 of a Kind</th> <td></td> <td></td> </tr>
+            <tr> <th>4 of a Kind</th> <td></td> <td></td> </tr>
+            <tr> <th>Full House</th> <td></td> <td></td> </tr>
+            <tr> <th>Small Straight</th> <td></td> <td></td> </tr>
+            <tr> <th>Large Straight</th> <td></td> <td></td> </tr>
+            <tr> <th>Yahtzee</th> <td></td> <td></td> </tr>
+            <tr> <th>Chance</th> <td></td> <td></td> </tr>
+
+            <tr> <th>Total</th> <td></td> <td></td> </tr>
+            <tr> <th>Bonus</th> <td></td> <td></td> </tr>
+            <tr> <th>Grand Total</th> <td></td> <td></td> </tr>
+        </tbody>
+    </table>
 </body>
 
 <script>loadHeader('Yahtzee', 'my attempt at yahtzee')</script>
+<script>onLoad()</script>
 
 
 </html>
