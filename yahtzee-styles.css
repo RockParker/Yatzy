@@ -26,5 +26,5 @@ table, tbody, th, td
 
 .player-selected
 {
-    background:greenyellow;
+    -webkit-text-fill-color: Green ;
 }
