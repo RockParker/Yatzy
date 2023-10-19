@@ -31,15 +31,9 @@ For now everything gets the same font type
  - **Border Radius:** 20px Rounding
  - **Border Colour:** Lighter border color
  
- ### **Header**
- - **Design:** Centered, horizontally spans most of the site. Dark Background, Lightborder
- - **Image:**
-![Header Mock Up](Images/header.png)
+ ### **Header & Content**
+ - **Design:** Follows the trends set out in the portfolio, as this is added to that projext as well
 
-### **Content**
- - **Design:** Centered, horizontally and vertically spans most of the site. Dark Background, Lightborder
- - **Image:**
-![Content Mock Up](Content.png)
 
 
 ### Dice
