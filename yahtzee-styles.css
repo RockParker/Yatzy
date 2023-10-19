@@ -28,3 +28,20 @@ table, tbody, th, td
 {
     -webkit-text-fill-color: Green ;
 }
+
+.game
+{
+    display:flex;
+    flex-direction: row;
+}
+
+.dice-img
+{
+    margin: 5px;
+
+}
+
+.blur
+{
+    filter:blur(2px);
+}
