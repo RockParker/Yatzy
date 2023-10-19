@@ -36,18 +36,20 @@ For now everything gets the same font type
  - **Image:**
 ![Header Mock Up](header.png)
 
-### **Navigation:**
- - **Design:** Centered, spans part of the header.
- - **Image:**
-![Navigation Mock Up](Navigation.png)
-
 ### **Content**
  - **Design:** Centered, horizontally and vertically spans most of the site. Dark Background, Lightborder
  - **Image:**
 ![Content Mock Up](Content.png)
 
-### **Footer**
- - **Design:** Left aligned, horizontally spans all of the site. Accent color background, no border effects
- - **Image:**
-![Footer Mock Up](footer.png)
+
+### Dice
+ - **Design** Simple rounded corner squares, with simple black dots
+ - **Images**
+![One Face](1_face.png)
+![Two Face](2_face.png)
+![Three Face](3_face.png)
+![Four Face](4_face.png)
+![Five Face](5-face.png)
+![Six Face](6_face.png)
+
 	
