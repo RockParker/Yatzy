@@ -49,7 +49,7 @@ For now everything gets the same font type
 ![Two Face](Dice/2_face.png)
 ![Three Face](Dice/3_face.png)
 ![Four Face](Dice/4_face.png)
-![Five Face](Dice/5-face.png)
+![Five Face](Dice/5_face.png)
 ![Six Face](Dice/6_face.png)
 
 	
