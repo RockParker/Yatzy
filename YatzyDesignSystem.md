@@ -34,7 +34,7 @@ For now everything gets the same font type
  ### **Header**
  - **Design:** Centered, horizontally spans most of the site. Dark Background, Lightborder
  - **Image:**
-![Header Mock Up](header.png)
+![Header Mock Up](Images/header.png)
 
 ### **Content**
  - **Design:** Centered, horizontally and vertically spans most of the site. Dark Background, Lightborder
@@ -45,11 +45,11 @@ For now everything gets the same font type
 ### Dice
  - **Design** Simple rounded corner squares, with simple black dots
  - **Images**
-![One Face](1_face.png)
-![Two Face](2_face.png)
-![Three Face](3_face.png)
-![Four Face](4_face.png)
-![Five Face](5-face.png)
-![Six Face](6_face.png)
+![One Face](Dice/1_face.png)
+![Two Face](Dice/2_face.png)
+![Three Face](Dice/3_face.png)
+![Four Face](Dice/4_face.png)
+![Five Face](Dice/5-face.png)
+![Six Face](Dice/6_face.png)
 
 	
