@@ -1,29 +1,34 @@
 
-let diceList = null; //one for each die
 let tCells;
 let rollCount;
 let hasRolledSinceClick;
+
 const CLICKABLE_CLASS = 'player-clickable';
 const SELECTED_CLASS = 'player-selected';
 const ACTIVE_ATTRIBUTE = 'data_is_active';
 const ACTIVE_LEVEL = {ACTIVE: 'True', NOT_ACTIVE: 'False'};
 const STRAIGHT_SIZE = {SMALL: 4, LARGE: 5};
 const NUMBER_OF_DICE = 5;
+let diceHandler = null;
 const POE ={PLAYER:'player', FOE:'foe'};
+const diceEndPoint = 'http://localhost:3000/dice/roll-dices';
+
+let diceList;
 
 
 /**
- * resets the game
+ * starts/resets the game
  */
 function startNewGame() {
     rollCount = 0;
     hasRolledSinceClick = true;
     tCells = document.getElementsByTagName('td');
 
-    if(diceList === null)
-        createDice();
-    else
-        resetDice();
+    if(diceHandler == null)
+        diceHandler = new DiceHandler(NUMBER_OF_DICE);
+
+    diceHandler.resetDice();
+    diceList = diceHandler.getDice();
 
     for (let i = 0; i < tCells.length; i++) {
         let cell = tCells[i];
@@ -61,7 +66,7 @@ function cellClick(event) {
     el.classList.replace(CLICKABLE_CLASS, SELECTED_CLASS);
     el.setAttribute(ACTIVE_ATTRIBUTE, ACTIVE_LEVEL.NOT_ACTIVE)
     calculateTotals();
-    resetDice();
+    diceHandler.resetDice();
 }
 
 
@@ -87,22 +92,19 @@ function isRangeComplete(start, end)
     return true;
 }
 
-
-
 /**
- * rolls all the dice
+ * rolls the dice
  * @param poe
+ * @returns {Promise<void>}
  */
-function rollDice(poe) {
-    if(rollCount === 3)
+async function rollDice(poe)
+{
+    if (rollCount === 3)
         return;
 
     hasRolledSinceClick = true;
 
-    for (let i = 0; i < diceList.length; i++)
-    {
-        diceList[i].roll();
-    }
+    await diceHandler.rollDice();
 
     updateCells(poe);
 
@@ -111,26 +113,6 @@ function rollDice(poe) {
 }
 
 
-/**
- * just made to shrink the startNewGame Method
- */
-function createDice()
-{
-    diceList = [];
-    for(let i = 0; i < NUMBER_OF_DICE; i++)
-    {
-        diceList.push(new Dice(null, 'die-img'+(i+1)));
-    }
-}
 
-/**
- * called to set the dice up for the next roll or game.
- * Just sets them all to active
- */
-function resetDice()
-{
-    for (let i = 0; i< NUMBER_OF_DICE; i++)
-    {
-        diceList[i].reset();
-    }
-}
+
+

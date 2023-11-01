@@ -28,16 +28,34 @@ class Dice
         if(this.isActive)
         {
             this.number = Math.floor(Math.random() * 6) + 1;
-            this.imgEl.setAttribute('src', ('Dice/'+this.number+'_face.png'));
+            this.#setImg();
         }
 
+    }
+
+    setNumber(newNumber)
+    {
+        if(newNumber < 1 || newNumber > 6)
+            return;
+
+        if(this.isActive)
+        {
+            this.number = newNumber;
+            this.#setImg();
+        }
     }
 
     reset()
     {
         this.isActive = true;
         this.imgEl.classList.remove('blur');
-        this.imgEl.setAttribute('src', 'Dice/'+1+'_face.png');
+        this.number = 1;
+        this.#setImg();
         this.number = null;
+    }
+
+    #setImg()//private
+    {
+        this.imgEl.setAttribute('src', 'Dice/'+this.number+'_face.png');
     }
 }
